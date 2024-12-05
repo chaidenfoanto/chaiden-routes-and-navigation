@@ -59,4 +59,6 @@ chaiden_routes-and-navigation/
 ## Teknologi yang Digunakan
 
 - **Flutter**: Framework untuk membangun aplikasi mobile.
-- **Dart**: Bahasa pemrograman yang digunakan untuk pengembangan aplikasi Flutte
+- **Dart**: Bahasa pemrograman yang digunakan untuk pengembangan aplikasi Flutter
+
+Thank you.
