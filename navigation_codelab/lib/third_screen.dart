@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class SecondScreen extends StatelessWidget {
+class ThirdScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Second Screen')),
+      appBar: AppBar(title: Text('Third Screen')),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -46,16 +46,16 @@ class SecondScreen extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // Kembali ke first screen
-                Navigator.pop(context);
+                Navigator.pushNamed(context, '/');
               },
               child: Text('Go Back to First Screen'),
             ),
             ElevatedButton(
               onPressed: () {
-                // Navigasi ke third screen
-                Navigator.pushNamed(context, '/third');
+                // Navigasi ke second screen
+                Navigator.pushNamed(context, '/second');
               },
-              child: Text('Go to Third Screen'),
+              child: Text('Go to Second Screen'),
             ),
           ],
         ),
@@ -76,7 +76,7 @@ class SecondScreen extends StatelessWidget {
             label: 'Third Screen',
           ),
         ],
-        currentIndex: 1,
+        currentIndex: 2,
         selectedItemColor: Colors.blue,
         onTap: (index) {
           if (index == 0) {
