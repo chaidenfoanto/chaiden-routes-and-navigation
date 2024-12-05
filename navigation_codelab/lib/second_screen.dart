@@ -10,10 +10,11 @@ class SecondScreen extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: [
             DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
+              decoration: BoxDecoration(color: Colors.blue),
+              child: Text(
+                'Navigation Menu',
+                style: TextStyle(color: Colors.white, fontSize: 24),
               ),
-              child: Text('Navigation Menu', style: TextStyle(color: Colors.white, fontSize: 24)),
             ),
             ListTile(
               leading: Icon(Icons.looks_one),
@@ -26,7 +27,7 @@ class SecondScreen extends StatelessWidget {
               leading: Icon(Icons.looks_two),
               title: Text('Second Screen'),
               onTap: () {
-                Navigator.pushNamed(context, '/second');
+                Navigator.pop(context); // Menutup drawer
               },
             ),
             ListTile(
@@ -45,14 +46,12 @@ class SecondScreen extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                // Kembali ke first screen
-                Navigator.pop(context);
+                Navigator.pop(context); // Kembali ke First Screen
               },
-              child: Text('Go Back to First Screen'),
+              child: Text('Go Back to Previous Screen'),
             ),
             ElevatedButton(
               onPressed: () {
-                // Navigasi ke third screen
                 Navigator.pushNamed(context, '/third');
               },
               child: Text('Go to Third Screen'),
@@ -60,7 +59,6 @@ class SecondScreen extends StatelessWidget {
           ],
         ),
       ),
-      // Bottom navigation bar untuk navigasi tambahan
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -82,7 +80,7 @@ class SecondScreen extends StatelessWidget {
           if (index == 0) {
             Navigator.pushNamed(context, '/');
           } else if (index == 1) {
-            Navigator.pushNamed(context, '/second');
+            Navigator.pop(context); // Tetap di halaman ini
           } else if (index == 2) {
             Navigator.pushNamed(context, '/third');
           }

@@ -9,13 +9,7 @@ class _FirstScreenState extends State<FirstScreen> {
   int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-
-    if (index == 0) {
-      Navigator.pushNamed(context, '/');
-    } else if (index == 1) {
+    if (index == 1) {
       Navigator.pushNamed(context, '/second');
     } else if (index == 2) {
       Navigator.pushNamed(context, '/third');
@@ -31,16 +25,17 @@ class _FirstScreenState extends State<FirstScreen> {
           padding: EdgeInsets.zero,
           children: [
             DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
+              decoration: BoxDecoration(color: Colors.blue),
+              child: Text(
+                'Navigation Menu',
+                style: TextStyle(color: Colors.white, fontSize: 24),
               ),
-              child: Text('Navigation Menu', style: TextStyle(color: Colors.white, fontSize: 24)),
             ),
             ListTile(
               leading: Icon(Icons.looks_one),
               title: Text('First Screen'),
               onTap: () {
-                Navigator.pushNamed(context, '/');
+                Navigator.pop(context); // Menutup drawer
               },
             ),
             ListTile(
@@ -66,14 +61,12 @@ class _FirstScreenState extends State<FirstScreen> {
           children: [
             ElevatedButton(
               onPressed: () {
-                // Navigasi menggunakan named route ke second screen
                 Navigator.pushNamed(context, '/second');
               },
               child: Text('Go to Second Screen'),
             ),
             ElevatedButton(
               onPressed: () {
-                // Navigasi menggunakan named route ke third screen
                 Navigator.pushNamed(context, '/third');
               },
               child: Text('Go to Third Screen'),
@@ -81,7 +74,6 @@ class _FirstScreenState extends State<FirstScreen> {
           ],
         ),
       ),
-      // Bottom navigation bar
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(

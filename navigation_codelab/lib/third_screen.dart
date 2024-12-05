@@ -10,10 +10,11 @@ class ThirdScreen extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: [
             DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
+              decoration: BoxDecoration(color: Colors.blue),
+              child: Text(
+                'Navigation Menu',
+                style: TextStyle(color: Colors.white, fontSize: 24),
               ),
-              child: Text('Navigation Menu', style: TextStyle(color: Colors.white, fontSize: 24)),
             ),
             ListTile(
               leading: Icon(Icons.looks_one),
@@ -33,7 +34,7 @@ class ThirdScreen extends StatelessWidget {
               leading: Icon(Icons.looks_3),
               title: Text('Third Screen'),
               onTap: () {
-                Navigator.pushNamed(context, '/third');
+                Navigator.pop(context); // Menutup drawer
               },
             ),
           ],
@@ -45,22 +46,19 @@ class ThirdScreen extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                // Kembali ke first screen
-                Navigator.pushNamed(context, '/');
+                Navigator.pop(context); // Kembali ke Second Screen
               },
-              child: Text('Go Back to First Screen'),
+              child: Text('Go Back to Previous Screen'),
             ),
             ElevatedButton(
               onPressed: () {
-                // Navigasi ke second screen
-                Navigator.pushNamed(context, '/second');
+                Navigator.pushNamed(context, '/');
               },
-              child: Text('Go to Second Screen'),
+              child: Text('Go to First Screen'),
             ),
           ],
         ),
       ),
-      // Bottom navigation bar untuk navigasi tambahan
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -84,7 +82,7 @@ class ThirdScreen extends StatelessWidget {
           } else if (index == 1) {
             Navigator.pushNamed(context, '/second');
           } else if (index == 2) {
-            Navigator.pushNamed(context, '/third');
+            Navigator.pop(context); // Tetap di halaman ini
           }
         },
       ),
