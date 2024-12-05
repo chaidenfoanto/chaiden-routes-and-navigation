@@ -44,11 +44,17 @@ Aplikasi akan dijalankan pada emulator atau perangkat yang terhubung.
 ---
 
 ## Struktur Proyek
-
-- **lib/main.dart**: Entry point aplikasi, mendefinisikan `MaterialApp` dan routes.
-- **lib/first_screen.dart**: Layar pertama dengan tombol untuk navigasi ke layar kedua.
-- **lib/second_screen.dart**: Layar kedua dengan tombol untuk kembali ke layar pertama.
-- **lib/screens**: Folder tempat menyimpan berbagai layar jika aplikasi berkembang.
+```vbnet
+chaiden_routes-and-navigation/
+├── navigation_codelab/
+    ├── lib/
+    |   ├── first_screen.dart
+    |   ├── main.dart
+    |   ├── second_screen.dart
+    |   └── third_screen.dart
+    |
+    └── pubspec.yaml
+  ```
 
 ## Teknologi yang Digunakan
 
