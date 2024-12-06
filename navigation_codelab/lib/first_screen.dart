@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class FirstScreen extends StatefulWidget {
+  const FirstScreen({super.key});
+
   @override
   _FirstScreenState createState() => _FirstScreenState();
 }
 
 class _FirstScreenState extends State<FirstScreen> {
-  int _selectedIndex = 0;
+  final int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
     if (index == 1) {
@@ -19,12 +21,12 @@ class _FirstScreenState extends State<FirstScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('First Screen')),
+      appBar: AppBar(title: const Text('First Screen')),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-            DrawerHeader(
+            const DrawerHeader(
               decoration: BoxDecoration(color: Colors.blue),
               child: Text(
                 'Navigation Menu',
@@ -32,22 +34,22 @@ class _FirstScreenState extends State<FirstScreen> {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.looks_one),
-              title: Text('First Screen'),
+              leading: const Icon(Icons.looks_one),
+              title: const Text('First Screen'),
               onTap: () {
-                Navigator.pop(context); // Menutup drawer
+                Navigator.pop(context); 
               },
             ),
             ListTile(
-              leading: Icon(Icons.looks_two),
-              title: Text('Second Screen'),
+              leading: const Icon(Icons.looks_two),
+              title: const Text('Second Screen'),
               onTap: () {
                 Navigator.pushNamed(context, '/second');
               },
             ),
             ListTile(
-              leading: Icon(Icons.looks_3),
-              title: Text('Third Screen'),
+              leading: const Icon(Icons.looks_3),
+              title: const Text('Third Screen'),
               onTap: () {
                 Navigator.pushNamed(context, '/third');
               },
@@ -63,13 +65,14 @@ class _FirstScreenState extends State<FirstScreen> {
               onPressed: () {
                 Navigator.pushNamed(context, '/second');
               },
-              child: Text('Go to Second Screen'),
+              child: const Text('Go to Second Screen'),
             ),
+            SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/third');
               },
-              child: Text('Go to Third Screen'),
+              child: const Text('Go to Third Screen'),
             ),
           ],
         ),

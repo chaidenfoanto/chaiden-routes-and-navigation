@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
 class ThirdScreen extends StatelessWidget {
+  const ThirdScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Third Screen')),
+      appBar: AppBar(title: const Text('Third Screen')),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-            DrawerHeader(
+            const DrawerHeader(
               decoration: BoxDecoration(color: Colors.blue),
               child: Text(
                 'Navigation Menu',
@@ -17,24 +19,24 @@ class ThirdScreen extends StatelessWidget {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.looks_one),
-              title: Text('First Screen'),
+              leading: const Icon(Icons.looks_one),
+              title: const Text('First Screen'),
               onTap: () {
                 Navigator.pushNamed(context, '/');
               },
             ),
             ListTile(
-              leading: Icon(Icons.looks_two),
-              title: Text('Second Screen'),
+              leading: const Icon(Icons.looks_two),
+              title: const Text('Second Screen'),
               onTap: () {
                 Navigator.pushNamed(context, '/second');
               },
             ),
             ListTile(
-              leading: Icon(Icons.looks_3),
-              title: Text('Third Screen'),
+              leading: const Icon(Icons.looks_3),
+              title: const Text('Third Screen'),
               onTap: () {
-                Navigator.pop(context); // Menutup drawer
+                Navigator.pop(context);
               },
             ),
           ],
@@ -46,15 +48,16 @@ class ThirdScreen extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                Navigator.pop(context); // Kembali ke Second Screen
+                Navigator.pop(context);
               },
-              child: Text('Go Back to Previous Screen'),
+              child: const Text('Go Back to Previous Screen'),
             ),
+            SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/');
               },
-              child: Text('Go to First Screen'),
+              child: const Text('Go to First Screen'),
             ),
           ],
         ),
@@ -82,7 +85,7 @@ class ThirdScreen extends StatelessWidget {
           } else if (index == 1) {
             Navigator.pushNamed(context, '/second');
           } else if (index == 2) {
-            Navigator.pop(context); // Tetap di halaman ini
+            Navigator.pop(context);
           }
         },
       ),
