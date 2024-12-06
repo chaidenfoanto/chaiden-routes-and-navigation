@@ -7,15 +7,20 @@ class FirstScreen extends StatefulWidget {
   _FirstScreenState createState() => _FirstScreenState();
 }
 
+  final List<Widget> _pages = [
+    const Center(child: Text('You are in First Screen', style: TextStyle(fontSize: 24))),
+    const Center(child: Text('You are in Second Screen', style: TextStyle(fontSize: 24))),
+    const Center(child: Text('You are in Third Screen', style: TextStyle(fontSize: 24))),
+  ];
+
 class _FirstScreenState extends State<FirstScreen> {
-  final int _selectedIndex = 0;
+  int _selectedIndex = 0;
+
 
   void _onItemTapped(int index) {
-    if (index == 1) {
-      Navigator.pushNamed(context, '/second');
-    } else if (index == 2) {
-      Navigator.pushNamed(context, '/third');
-    }
+    setState(() {
+      _selectedIndex = index;
+    });
   }
 
   @override
@@ -61,19 +66,23 @@ class _FirstScreenState extends State<FirstScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/second');
-              },
-              child: const Text('Go to Second Screen'),
+            IndexedStack(
+              index: _selectedIndex,
+              children: _pages,
             ),
-            SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/third');
-              },
-              child: const Text('Go to Third Screen'),
-            ),
+            // ElevatedButton(
+            //   onPressed: () {
+            //     Navigator.pushNamed(context, '/second');
+            //   },
+            //   child: const Text('Go to Second Screen'),
+            // ),
+            // SizedBox(height: 10),
+            // ElevatedButton(
+            //   onPressed: () {
+            //     Navigator.pushNamed(context, '/third');
+            //   },
+            //   child: const Text('Go to Third Screen'),
+            // ),
           ],
         ),
       ),

@@ -62,33 +62,33 @@ class ThirdScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.looks_one),
-            label: 'First Screen',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.looks_two),
-            label: 'Second Screen',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.looks_3),
-            label: 'Third Screen',
-          ),
-        ],
-        currentIndex: 2,
-        selectedItemColor: Colors.blue,
-        onTap: (index) {
-          if (index == 0) {
-            Navigator.pushNamed(context, '/');
-          } else if (index == 1) {
-            Navigator.pushNamed(context, '/second');
-          } else if (index == 2) {
-            Navigator.pop(context);
-          }
-        },
-      ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   items: const <BottomNavigationBarItem>[
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.looks_one),
+      //       label: 'First Screen',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.looks_two),
+      //       label: 'Second Screen',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.looks_3),
+      //       label: 'Third Screen',
+      //     ),
+      //   ],
+      //   currentIndex: 2,
+      //   selectedItemColor: Colors.blue,
+      //   onTap: (index) {
+      //     if (index == 0) {
+      //       Navigator.pushNamed(context, '/');
+      //     } else if (index == 1) {
+      //       Navigator.pushNamed(context, '/second');
+      //     } else if (index == 2) {
+      //       Navigator.pop(context);
+      //     }
+      //   },
+      // ),
     );
   }
 }
