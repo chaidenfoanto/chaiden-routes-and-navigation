@@ -74,11 +74,11 @@ Untuk tugas ini, saya mengimplementasikan navigasi menggunakan dua metode utama:
 
 ### Tantangan yang Dihadapi
 
-Salah satu tantangan yang saya hadapi adalah mengatur **Bottom Navigation Bar**, supaya navbar saya hanya mengganti **isi halaman**, bukan mengganti **seluruh halaman**. Pada implementasi awal, saya menggunakan `Navigator.pushNamed()` untuk berpindah ke layar lain saat memilih item di **Bottom Navigation Bar**, yang menyebabkan layar penuh dimuat kembali setiap kali memilih menu navbar. Hal ini tidak sesuai dengan instruksi ko Rei (Asisten Dosen), yang menginginkan hanya **isi layar** yang berubah tanpa harus memuat ulang halaman secara keseluruhan.
+    Salah satu tantangan yang saya hadapi adalah mengatur **Bottom Navigation Bar**, supaya navbar saya hanya mengganti **isi halaman**, bukan mengganti **seluruh halaman**. Pada implementasi awal, saya menggunakan `Navigator.pushNamed()` untuk berpindah ke layar lain saat memilih item di **Bottom Navigation Bar**, yang menyebabkan layar penuh dimuat kembali setiap kali memilih menu navbar. Hal ini tidak sesuai dengan instruksi ko Rei (Asisten Dosen), yang menginginkan hanya **isi layar** yang berubah tanpa harus memuat ulang halaman secara keseluruhan.
 
-Untuk mengatasi masalah ini, saya mengganti pendekatan dengan menggunakan **IndexedStack**. Dengan menggunakan **IndexedStack**, saya memastikan bahwa hanya tampilan **isi halaman** yang berubah ketika item di **Bottom Navigation Bar** dipilih, tanpa harus mereload seluruh halaman. Setiap layar sekarang berada dalam stack yang terpisah dan hanya tampilan layar yang aktif yang ditampilkan, sementara layar lainnya tetap berada di belakang dan tidak terganggu.
+    Untuk mengatasi masalah ini, saya mengganti pendekatan dengan menggunakan **IndexedStack**. Dengan menggunakan **IndexedStack**, saya memastikan bahwa hanya tampilan **isi halaman** yang berubah ketika item di **Bottom Navigation Bar** dipilih, tanpa harus mereload seluruh halaman. Setiap layar sekarang berada dalam stack yang terpisah dan hanya tampilan layar yang aktif yang ditampilkan, sementara layar lainnya tetap berada di belakang dan tidak terganggu.
 
-Selain itu, pada **Drawer Menu** yang ada di setiap layar, saya juga memastikan agar pengguna dapat berpindah antar layar dengan menggunakan `Navigator.pushNamed()` dan `Navigator.pop()`, yang memberikan fleksibilitas lebih dalam navigasi aplikasi.
+    Selain itu, pada **Drawer Menu** yang ada di setiap layar, saya juga memastikan agar pengguna dapat berpindah antar layar dengan menggunakan `Navigator.pushNamed()` dan `Navigator.pop()`, yang memberikan fleksibilitas lebih dalam navigasi aplikasi.
 
 ## Teknologi yang Digunakan
 
